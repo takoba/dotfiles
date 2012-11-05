@@ -1,8 +1,0 @@
-管理しようと思ってるファイル
-~/.vimrc
-~/.bashrc <- これは環境に依存する記述とかありそうだからincludeするタイプで
-## Source global definitions
-#if [ -f /etc/bashrc ]; then
-#    . /etc/bashrc
-#fi
-~/.zshrc
