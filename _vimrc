@@ -42,6 +42,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'ruby.vim'
 Bundle 'rails.vim'
 Bundle 'sudo.vim'
+Bundle 'pig.vim'
 
 "" syntastic
 Bundle 'scrooloose/syntastic'
