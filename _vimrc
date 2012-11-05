@@ -41,6 +41,7 @@ Bundle 'gmarik/vundle'
 Bundle 'pangloss/vim-javascript'
 Bundle 'ruby.vim'
 Bundle 'rails.vim'
+Bundle 'sudo.vim'
 
 "" 一時的に消してます（error吐くので）
 Bundle 'scrooloose/syntastic'
