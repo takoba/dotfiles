@@ -38,9 +38,11 @@ Bundle 'gmarik/vundle'
 ""
 "" original repos on github
 "Bundle 'fholgado/minibufexpl.vim'
+Bundle 'Shougo/unite.vim'
 Bundle 'pangloss/vim-javascript'
-Bundle 'ruby.vim'
-Bundle 'rails.vim'
+Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/surround.vim'
 Bundle 'sudo.vim'
 Bundle 'pig.vim'
 
