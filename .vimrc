@@ -27,12 +27,8 @@ au BufRead,BufNew * match JpSpace /　/
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/vundle.git/
 call vundle#rc()
-
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
 
 "" My Bundles here:
 ""
