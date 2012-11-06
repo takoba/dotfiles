@@ -24,7 +24,7 @@ Bundle 'Shougo/vimproc'
 "" syntastic
 Bundle 'scrooloose/syntastic'
 let g:syntastic_mode_map = { 'mode': 'passive',
-  \ 'active_filetypes': ['ruby', 'javascript'], 
+  \ 'active_filetypes': ['ruby', 'php', 'javascript'], 
   \ 'passive_filetypes': ['html'] }
 let g:syntastic_javascript_checker = 'gjslint'
 let g:syntastic_enable_signs = 1
