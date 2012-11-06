@@ -31,9 +31,9 @@ let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
 
 "" neocomplcache
-"if filereadable(expand('~/.vimrc.neocomplcache'))
-"  source ~/.vimrc.neocomplcache
-"endif
+if filereadable(expand('~/.vimrc.neocomplcache'))
+  source ~/.vimrc.neocomplcache
+endif
 
 filetype plugin indent on
 
