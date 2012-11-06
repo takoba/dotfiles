@@ -2,7 +2,7 @@
 
 * ~/.vimrc
 * ~/.bashrc
-  * これは環境に依存する記述とかありそうだからincludeするタイプとかにする
+  * これは環境に依存する記述とかありそうだから、~/.bashrcにincludeするタイプとかにする
 
   ```:~/.bashrc
     if [ -f ~/dotfiles/.bashrc ]; then
