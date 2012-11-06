@@ -5,7 +5,6 @@
   * これは環境に依存する記述とかありそうだからincludeするタイプとかにする
 
   ```:~/.bashrc
-    ## Source global definitions
     if [ -f ~/dotfiles/.bashrc ]; then
       . ~/dotfiles/.bashrc
     fi
