@@ -79,7 +79,7 @@ let g:neocomplcache_delimiter_patterns['php'] = ['->', '::', '\']
 "カーソルより後のキーワードパターンを認識。
 "h|geとなっている状態(|はカーソル)で、hogeを補完したときに後ろのキーワードを認識してho|geと補完する機能。
 "修正するときにかなり便利。
-g:neocomplcache_next_keyword_patternsは分からないときはいじらないほうが良いです。
+"g:neocomplcache_next_keyword_patternsは分からないときはいじらないほうが良いです。
 if !exists('g:neocomplcache_next_keyword_patterns')
   let g:neocomplcache_next_keyword_patterns = {}
 endif
