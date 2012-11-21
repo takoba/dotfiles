@@ -20,6 +20,7 @@ Bundle 'sudo.vim'
 Bundle 'pig.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/vimproc'
+Bundle 'thinca/vim-quickrun'
 
 "" syntastic
 Bundle 'scrooloose/syntastic'
@@ -35,8 +36,8 @@ if filereadable(expand('~/.vimrc.neocomplcache'))
   source ~/.vimrc.neocomplcache
 endif
 
-filetype plugin indent on
 
+filetype plugin indent on
 
 " backspace
 set backspace=indent,eol,start
