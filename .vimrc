@@ -21,6 +21,7 @@ Bundle 'pig.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/vimproc'
 Bundle 'thinca/vim-quickrun'
+Bundle 'm2ym/rsense'
 
 "" syntastic
 Bundle 'scrooloose/syntastic'
@@ -33,7 +34,7 @@ let g:syntastic_auto_loc_list = 2
 
 "" neocomplcache
 if filereadable(expand('~/.vimrc.neocomplcache'))
-  source ~/.vimrc.neocomplcache
+  "source ~/.vimrc.neocomplcache
 endif
 
 

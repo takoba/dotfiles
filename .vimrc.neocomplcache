@@ -27,14 +27,6 @@ let g:neocomplcache_min_syntax_length = 4
 let g:neocomplcache_enable_ignore_case = 1
 "入力に大文字が入力されている場合、大文字小文字の区別をする
 let g:neocomplcache_enable_smart_case = 1
-"ポップアップメニューが出ているときに-を入力すると英数字で候補選択する。
-"削除されていたようなのでコメントアウト
-"let g:neocomplcache_enable_quick_match = 0
-";で英数字候補選択できるようにしたかったけど動かない
-"動かないのは仕様のようです。コメントアウト
-"let g:neocomplcache_quick_match_patterns = {
-"  \ 'default' : ';'
-"  \ }
 "大文字小文字を区切りとしたあいまい検索を行うかどうか。
 "DTと入力するとD*T*と解釈され、DateTime等にマッチする。
 let g:neocomplcache_enable_camel_case_completion = 0
@@ -44,7 +36,7 @@ let g:neocomplcache_enable_underbar_completion = 0
  
 "neocomplcacheを自動的にロックするバッファ名のパターンを指定。
 "ku.vimやfuzzyfinderなど、neocomplcacheと相性が悪いプラグインを使用する場合に設定。
-"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
  
 "キャッシュディレクトリの場所
 "RamDiskをキャッシュディレクトリに設定
@@ -55,7 +47,7 @@ elseif has('macunix')
 else
   let g:neocomplcache_temporary_dir = '/tmp/.neocon'
 endif
- 
+
 "シンタックス補完を無効に
 let g:neocomplcache_plugin_disable = {
   \ 'syntax_complete' : 1,
@@ -68,7 +60,7 @@ endif
 "日本語を補完候補として取得しないようにする
 let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 "twigはhtmlと同じに
-let g:neocomplcache_keyword_patterns['twig'] = '</\?\%([[:alnum:]_:-]\+\s*\)\?\%(/\?>\)\?\|&amp;\h\%(\w*;\)\?\|\h[[:alnum:]_-]*="\%([^"]*"\?\)\?\|\h[[:alnum:]_:-]*'
+"let g:neocomplcache_keyword_patterns['twig'] = '</\?\%([[:alnum:]_:-]\+\s*\)\?\%(/\?>\)\?\|&amp;\h\%(\w*;\)\?\|\h[[:alnum:]_-]*="\%([^"]*"\?\)\?\|\h[[:alnum:]_:-]*'
  
 "関数を補完するための区切り文字パターン
 if !exists('g:neocomplcache_delimiter_patterns')
@@ -86,7 +78,7 @@ endif
 "よく分からない場合は未設定のほうがよいとのことなので、ひとまずコメントアウト
 "let g:neocomplcache_next_keyword_patterns['php'] = '\h\w*>'
 "twigはhtmlと同じに
-let g:neocomplcache_next_keyword_patterns['twig'] = '[[:alnum:]_:-]*>\|[^"]*"'
+"let g:neocomplcache_next_keyword_patterns['twig'] = '[[:alnum:]_:-]*>\|[^"]*"'
  
  
 "ファイルタイプの関連付け
@@ -101,9 +93,9 @@ endif
 "ファイルタイプごとの辞書ファイルの場所
 let g:neocomplcache_dictionary_filetype_lists = {
   \ 'default' : '',
-  \ 'php' : $HOME . '/.vim/dict/php.dict',
-  \ 'ctp' : $HOME . '/.vim/dict/php.dict',
-  \ 'twig' : $HOME . '/.vim/dict/twig.dict',
+  "\ 'php' : $HOME . '/.vim/dict/php.dict',
+  "\ 'ctp' : $HOME . '/.vim/dict/php.dict',
+  "\ 'twig' : $HOME . '/.vim/dict/twig.dict',
   \ 'vimshell' : $HOME . '/.vimshell/command-history',
   \ }
  
@@ -144,7 +136,13 @@ if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns['twig']= '<[^>]*'
-"let g:neocomplcache_omni_patterns['php'] = '[^. \t]->\h\w*\|\h\w*::'
+let g:neocomplcache_omni_patterns['php'] = '[^. \t]->\h\w*\|\h\w*::'
+
+let g:rsenseUseOmniFunc = 1
+if filereadable(expand('~/.vim/bundle/rsense/bin/rsense'))
+  let g:rsenseHome = expand('~/.vim/bundle/rsense')
+  let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+endif
  
 "keymap
  
@@ -155,17 +153,6 @@ xnoremap j gj
 nnoremap k gk
 onoremap k gk
 xnoremap k gk
- 
-"挿入モードのキーバインドをemacs風に
-inoremap <C-a> <Home>
-"inoremap <C-e> <End>
-inoremap <C-b> <Left>
-inoremap <C-f> <Right>
-"inoremap <C-n> <Down>
-"inoremap <C-p> <Up>
-inoremap <C-h> <BS>
-inoremap <C-d> <Del>
-"inoremap <C-k> <C-o>D
  
 "改行で補完ウィンドウを閉じる
 inoremap <expr><CR> neocomplcache#smart_close_popup() . "\<CR>"
