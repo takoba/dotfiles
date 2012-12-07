@@ -93,29 +93,27 @@ endif
 "ファイルタイプごとの辞書ファイルの場所
 let g:neocomplcache_dictionary_filetype_lists = {
   \ 'default' : '',
-  "\ 'php' : $HOME . '/.vim/dict/php.dict',
-  "\ 'ctp' : $HOME . '/.vim/dict/php.dict',
-  "\ 'twig' : $HOME . '/.vim/dict/twig.dict',
   \ 'vimshell' : $HOME . '/.vimshell/command-history',
   \ }
+  "\ 'php' : $HOME . '/.vim/dict/php.dict',
  
 "タグ補完
 "タグファイルの場所
-augroup SetTagsFile
-  autocmd!
-  autocmd FileType php set tags=$HOME/.vim/tags/php.tags
-augroup END
+"augroup SetTagsFile
+"  autocmd!
+"  autocmd FileType php set tags=$HOME/.vim/tags/php.tags
+"augroup END
 "タグ補完の呼び出しパターン
-if !exists('g:neocomplcache_member_prefix_patterns')
-  let g:neocomplcache_member_prefix_patterns = {}
-endif
-let g:neocomplcache_member_prefix_patterns['php'] = '->\|::'
+"if !exists('g:neocomplcache_member_prefix_patterns')
+"  let g:neocomplcache_member_prefix_patterns = {}
+"endif
+"let g:neocomplcache_member_prefix_patterns['php'] = '->\|::'
  
 "スニペット補完
 "標準で用意されているスニペットを無効にする。初期化前に設定する
-let g:neocomplcache_snippets_disable_runtime_snippets = 1
+"let g:neocomplcache_snippets_disable_runtime_snippets = 1
 "スニペットファイルの置き場所
-let g:neocomplcache_snippets_dir = $HOME.'/.vim/snippets'
+"let g:neocomplcache_snippets_dir = $HOME.'/.vim/snippets'
  
 "zencoding連携
 let g:use_zen_complete_tag = 1
@@ -126,16 +124,13 @@ augroup SetOmniCompletionSetting
   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
   autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-  autocmd FileType ctp setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType twig setlocal omnifunc=htmlcomplete#CompleteTags
-"  autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
+  autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 augroup END
  
 "オムニ補完のパターンを設定
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
-let g:neocomplcache_omni_patterns['twig']= '<[^>]*'
 let g:neocomplcache_omni_patterns['php'] = '[^. \t]->\h\w*\|\h\w*::'
 
 let g:rsenseUseOmniFunc = 1
@@ -189,15 +184,15 @@ nnoremap <Space>nes :NeoComplCacheEditSnippets
 "インクルード補完。よくわからない。初期化のみに留める
 "通常は設定する必要はないらしい。
 "Vim標準のインクルード補完を模倣しているそうなので、そちらを勉強する
-if !exists('g:neocomplcache_include_paths')
-    let g:neocomplcache_include_paths = {}
-endif
-if !exists('g:neocomplcache_include_patterns')
-    let g:neocomplcache_include_patterns = {}
-endif
-if !exists('g:neocomplcache_ctags_arguments_list')
-    let g:neocomplcache_ctags_arguments_list = {}
-endif
+"if !exists('g:neocomplcache_include_paths')
+"    let g:neocomplcache_include_paths = {}
+"endif
+"if !exists('g:neocomplcache_include_patterns')
+"    let g:neocomplcache_include_patterns = {}
+"endif
+"if !exists('g:neocomplcache_ctags_arguments_list')
+"    let g:neocomplcache_ctags_arguments_list = {}
+"endif
  
 "ctagsの引数
 "let g:neocomplcache_ctags_arguments_list = {
