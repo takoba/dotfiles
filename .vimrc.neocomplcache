@@ -43,7 +43,8 @@ let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 if has('win32')
   let g:neocomplcache_temporary_dir = 'E:/.neocon'
 elseif has('macunix')
-  let g:neocomplcache_temporary_dir = '/Volumes/RamDisk/.neocon'
+  "let g:neocomplcache_temporary_dir = '/Volumes/RamDisk/.neocon'
+  let g:neocomplcache_temporary_dir = '/tmp/.neocon'
 else
   let g:neocomplcache_temporary_dir = '/tmp/.neocon'
 endif
