@@ -1,3 +1,16 @@
+" ======================
+" vim configuration file
+" @author takoba (https://github.com/plane25)
+"
+" README file is here:
+"
+" plane25/dotfiles - GitHub
+" https://github.com/plane25/dotfiles
+"
+" Sorry for writing some comments in Japanese, and I'll translate to English
+" later.
+" ======================
+
 syntax on
 
 "" bundle install...
@@ -22,12 +35,17 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/vimproc'
 Bundle 'thinca/vim-quickrun'
 Bundle 'm2ym/rsense'
+Bundle 'othree/html5.vim'
+Bundle 'vim-scripts/phtml.vim'
+Bundle 'vim-scripts/css_color.vim'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'mattn/zencoding-vim'
 
 "" syntastic
 Bundle 'scrooloose/syntastic'
 let g:syntastic_mode_map = { 'mode': 'passive',
   \ 'active_filetypes': ['ruby', 'php', 'javascript'], 
-  \ 'passive_filetypes': ['html'] }
+  \ 'passive_filetypes': ['html', 'phtml'] }
 let g:syntastic_javascript_checker = 'gjslint'
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
