@@ -61,18 +61,15 @@ filetype plugin indent on
 " backspace
 set backspace=indent,eol,start
 
-" 文字コード自動判別（日本語）
 set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,iso-2022-jp-3,iso-2022-jp,sjis,cp932,eucjp-ms,euc-jisx0213,euc-jp
 set ambiwidth=double
 
-" タブ
 set expandtab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
+set softtabstop=0
 
-" タブの可視化
 set list
 set listchars=tab:>.
 
