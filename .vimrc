@@ -13,12 +13,19 @@
 
 syntax on
 
-"" bundle install...
+"" NeoBundle install...
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-"set rtp+=~/.vim/vundle.git/
-"call vundle#rc()
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+NeoBundleFetch 'Shougo/neobundle.vim'
+
 
 "" My Bundles here:
 ""
@@ -32,7 +39,7 @@ filetype off                   " required!
 "NeoBundle 'sudo.vim'
 "NeoBundle 'pig.vim'
 "NeoBundle 'Shougo/neocomplcache'
-"NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimproc'
 "NeoBundle 'thinca/vim-quickrun'
 "NeoBundle 'm2ym/rsense'
 "NeoBundle 'othree/html5.vim'
@@ -55,9 +62,17 @@ filetype off                   " required!
 "  source ~/.vimrc.neocomplcache
 "endif
 
+filetype plugin indent on  " Required!
 
-filetype plugin indent on
+" Brief help
+" :NeoBundleList          - list configured bundles
+" :NeoBundleInstall(!)    - install(update) bundles
+" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
+" Installation check.
+NeoBundleCheck
+
+" ---
 " backspace
 set backspace=indent,eol,start
 
