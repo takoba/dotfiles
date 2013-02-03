@@ -31,36 +31,36 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 ""
 "" original repos on github
 "Bundle 'fholgado/minibufexpl.vim'
-"NeoBundle 'Shougo/unite.vim'
-"NeoBundle 'pangloss/vim-javascript'
-"NeoBundle 'tpope/vim-rails'
-"NeoBundle 'vim-ruby/vim-ruby'
-"NeoBundle 'vim-scripts/surround.vim'
-"NeoBundle 'sudo.vim'
-"NeoBundle 'pig.vim'
-"NeoBundle 'Shougo/neocomplcache'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'pangloss/vim-javascript'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'vim-scripts/surround.vim'
+NeoBundle 'sudo.vim'
+NeoBundle 'pig.vim'
 NeoBundle 'Shougo/vimproc'
-"NeoBundle 'thinca/vim-quickrun'
-"NeoBundle 'm2ym/rsense'
-"NeoBundle 'othree/html5.vim'
-"NeoBundle 'vim-scripts/phtml.vim'
-"NeoBundle 'vim-scripts/css_color.vim'
-"NeoBundle 'hail2u/vim-css3-syntax'
-"NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'm2ym/rsense'
+NeoBundle 'othree/html5.vim'
+NeoBundle 'vim-scripts/phtml.vim'
+NeoBundle 'vim-scripts/css_color.vim'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'mattn/zencoding-vim'
 
 "" syntastic
-"NeoBundle 'scrooloose/syntastic'
-"let g:syntastic_mode_map = { 'mode': 'passive',
-"  \ 'active_filetypes': ['ruby', 'php', 'javascript'], 
-"  \ 'passive_filetypes': ['html', 'phtml'] }
-"let g:syntastic_javascript_checker = 'gjslint'
-"let g:syntastic_enable_signs = 1
-"let g:syntastic_auto_loc_list = 2
+NeoBundle 'scrooloose/syntastic'
+let g:syntastic_mode_map = { 'mode': 'passive',
+  \ 'active_filetypes': ['ruby', 'php', 'javascript'], 
+  \ 'passive_filetypes': ['html', 'phtml'] }
+let g:syntastic_javascript_checker = 'gjslint'
+let g:syntastic_enable_signs = 1
+let g:syntastic_auto_loc_list = 2
 
 "" neocomplcache
-"if filereadable(expand('~/.vimrc.neocomplcache'))
-"  source ~/.vimrc.neocomplcache
-"endif
+NeoBundle 'Shougo/neocomplcache'
+if filereadable(expand('~/.vimrc.neocomplcache'))
+  source ~/.vimrc.neocomplcache
+endif
 
 filetype plugin indent on  " Required!
 
