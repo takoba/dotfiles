@@ -1,11 +1,11 @@
 " ======================
 " vim configuration file
-" @author takoba (https://github.com/plane25)
+" @author takoba (https://github.com/takoba)
 "
 " README file is here:
 "
-" plane25/dotfiles - GitHub
-" https://github.com/plane25/dotfiles
+" takoba/dotfiles - GitHub
+" https://github.com/takoba/dotfiles
 "
 " Sorry for writing some comments in Japanese, and I'll translate to English
 " later.
@@ -17,43 +17,43 @@ syntax on
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/vundle.git/
-call vundle#rc()
+"set rtp+=~/.vim/vundle.git/
+"call vundle#rc()
 
 "" My Bundles here:
 ""
 "" original repos on github
 "Bundle 'fholgado/minibufexpl.vim'
-Bundle 'Shougo/unite.vim'
-Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-rails'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/surround.vim'
-Bundle 'sudo.vim'
-Bundle 'pig.vim'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/vimproc'
-Bundle 'thinca/vim-quickrun'
-Bundle 'm2ym/rsense'
-Bundle 'othree/html5.vim'
-Bundle 'vim-scripts/phtml.vim'
-Bundle 'vim-scripts/css_color.vim'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'mattn/zencoding-vim'
+"NeoBundle 'Shougo/unite.vim'
+"NeoBundle 'pangloss/vim-javascript'
+"NeoBundle 'tpope/vim-rails'
+"NeoBundle 'vim-ruby/vim-ruby'
+"NeoBundle 'vim-scripts/surround.vim'
+"NeoBundle 'sudo.vim'
+"NeoBundle 'pig.vim'
+"NeoBundle 'Shougo/neocomplcache'
+"NeoBundle 'Shougo/vimproc'
+"NeoBundle 'thinca/vim-quickrun'
+"NeoBundle 'm2ym/rsense'
+"NeoBundle 'othree/html5.vim'
+"NeoBundle 'vim-scripts/phtml.vim'
+"NeoBundle 'vim-scripts/css_color.vim'
+"NeoBundle 'hail2u/vim-css3-syntax'
+"NeoBundle 'mattn/zencoding-vim'
 
 "" syntastic
-Bundle 'scrooloose/syntastic'
-let g:syntastic_mode_map = { 'mode': 'passive',
-  \ 'active_filetypes': ['ruby', 'php', 'javascript'], 
-  \ 'passive_filetypes': ['html', 'phtml'] }
-let g:syntastic_javascript_checker = 'gjslint'
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 2
+"NeoBundle 'scrooloose/syntastic'
+"let g:syntastic_mode_map = { 'mode': 'passive',
+"  \ 'active_filetypes': ['ruby', 'php', 'javascript'], 
+"  \ 'passive_filetypes': ['html', 'phtml'] }
+"let g:syntastic_javascript_checker = 'gjslint'
+"let g:syntastic_enable_signs = 1
+"let g:syntastic_auto_loc_list = 2
 
 "" neocomplcache
-if filereadable(expand('~/.vimrc.neocomplcache'))
-  source ~/.vimrc.neocomplcache
-endif
+"if filereadable(expand('~/.vimrc.neocomplcache'))
+"  source ~/.vimrc.neocomplcache
+"endif
 
 
 filetype plugin indent on
