@@ -46,6 +46,9 @@ NeoBundle 'vim-scripts/phtml.vim'
 NeoBundle 'vim-scripts/css_color.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'quickrun.vim'
+NeoBundle 'Markdown'
+NeoBundle 'Markdown-syntax'
 
 "" syntastic
 NeoBundle 'scrooloose/syntastic'
