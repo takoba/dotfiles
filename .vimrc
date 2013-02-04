@@ -46,7 +46,6 @@ NeoBundle 'vim-scripts/phtml.vim'
 NeoBundle 'vim-scripts/css_color.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'mattn/zencoding-vim'
-NeoBundle 'quickrun.vim'
 NeoBundle 'Markdown'
 NeoBundle 'Markdown-syntax'
 
@@ -64,6 +63,10 @@ NeoBundle 'Shougo/neocomplcache'
 if filereadable(expand('~/.vimrc.neocomplcache'))
   source ~/.vimrc.neocomplcache
 endif
+
+"" quickrun.vim
+NeoBundle 'quickrun.vim'
+let g:quickrun_config = {'*': {'hook/time/enable': 1},}
 
 filetype plugin indent on  " Required!
 
