@@ -87,8 +87,8 @@ set fileencodings=ucs-bom,utf-8,iso-2022-jp-3,iso-2022-jp,sjis,cp932,eucjp-ms,eu
 set ambiwidth=double
 
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set softtabstop=0
 
 set list
@@ -99,3 +99,6 @@ highlight SpecialKey cterm=NONE ctermfg=7 guifg=7
 " highlight(JpSpace)
 highlight JpSpace cterm=underline ctermfg=7 guifg=7
 au BufRead,BufNew * match JpSpace /　/
+
+set nu
+
