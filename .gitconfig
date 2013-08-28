@@ -1,0 +1,11 @@
+[user]
+	name = takoba
+	email = plane25@gmail.com
+[credential]
+	helper = cache
+[core]
+	editor = vim -c \"set fenc=utf-8\"
+	excludesfile = ~/.gitignore
+[alias]
+	tree = log --graph --all --date=short --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%ad%Creset  %C(green)%h%Creset %C(magenta reverse)%d%Creset %s\"
+	st = status
