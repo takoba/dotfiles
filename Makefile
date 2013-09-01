@@ -1,4 +1,4 @@
-DOT_FILES = .zshrc .vimrc .vim .vimrc.neocomplcache
+DOT_FILES = .zshrc .vimrc .vim .vimrc.neocomplcache .vimrc.tab
 
 all: zsh vim 
 

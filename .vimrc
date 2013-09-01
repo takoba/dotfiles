@@ -102,3 +102,7 @@ au BufRead,BufNew * match JpSpace /　/
 
 set nu
 
+" tab
+if filereadable(expand('~/.vimrc.tab'))
+  source ~/.vimrc.tab
+endif
