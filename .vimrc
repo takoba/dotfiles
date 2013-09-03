@@ -13,7 +13,7 @@
 
 syntax on
 
-"" NeoBundle install...
+" - NeoBundle
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -48,6 +48,8 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'mattn/zencoding-vim'
 NeoBundle 'Markdown'
 NeoBundle 'Markdown-syntax'
+NeoBundle 'gregsexton/gitv'
+NeoBundle 'tpope/vim-fugitive'
 
 "" syntastic
 NeoBundle 'scrooloose/syntastic'
@@ -67,6 +69,9 @@ endif
 "" quickrun.vim
 NeoBundle 'quickrun.vim'
 let g:quickrun_config = {'*': {'hook/time/enable': 1},}
+
+"" gtiv
+"autocmd FileType git :setlocal foldlevel=99
 
 filetype plugin indent on  " Required!
 
@@ -102,7 +107,7 @@ au BufRead,BufNew * match JpSpace /　/
 
 set nu
 
-" tab
+" - tab
 if filereadable(expand('~/.vimrc.tab'))
   source ~/.vimrc.tab
 endif
