@@ -31,25 +31,82 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 ""
 "" original repos on github
 "Bundle 'fholgado/minibufexpl.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'vim-scripts/surround.vim'
-NeoBundle 'sudo.vim'
-NeoBundle 'pig.vim'
+
+" - vimproc
 NeoBundle 'Shougo/vimproc'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'm2ym/rsense'
+
+" - unite.vim
+NeoBundle 'Shougo/unite.vim'
+let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable =1
+let g:unite_source_file_mru_limit = 200
+nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
+nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> ,nb :<C-u>Unite neobundle<CR>
+nnoremap <silent> ,ns :<C-u>Unite neobundle/search<CR>
+
+NeoBundle 'Shougo/vimfiler.vim' " Powerful file explorer implemented by Vim script
+  \ , { 'depends' :
+  \       [ 'Shougo/unite.vim'
+  \       ]
+  \   }
+NeoBundle 'vim-scripts/surround.vim' " Delete/change/add parentheses/quotes/XML-tags/much more with ease
+NeoBundle 'thinca/vim-quickrun' " Run commands quickly.
+NeoBundle 'Shougo/vimshell'
+  \ , { 'depends' :
+  \     [ 'Shougo/vimproc'
+  \     ]
+  \   }
+
+" - lightline.vim
+NeoBundle 'itchyny/lightline.vim'
+  \ , { 'depends' :
+  \     [ 'tpope/vim-fugitive'
+  \     , 'airblade/vim-gitgutter'
+  \     ]
+  \   }
+if filereadable(expand('~/.vimrc.lightline'))
+  source ~/.vimrc.lightline
+endif
+
+" - html
 NeoBundle 'othree/html5.vim'
-NeoBundle 'vim-scripts/phtml.vim'
 NeoBundle 'vim-scripts/css_color.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'mattn/zencoding-vim'
-NeoBundle 'Markdown'
-NeoBundle 'Markdown-syntax'
+" - php
+NeoBundle 'vim-scripts/phtml.vim'
+" - javascript
+NeoBundle 'pangloss/vim-javascript'
+" - ruby
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'm2ym/rsense'
+" - pig
+NeoBundle 'pig.vim'
+" - git
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'airblade/vim-gitgutter'
+nnoremap <silent> ,gg :<C-u>GitGutterToggle<CR>
+nnoremap <silent> ,gh :<C-u>GitGutterLineHighlightsToggle<CR>
+" - Markdown
+NeoBundle 'plasticboy/vim-markdown'
+NeoBundle 'superbrothers/vim-quickrun-markdown-gfm'
+  \ , { 'depends' :
+  \     [ 'thinca/vim-quickrun'
+  \     , 'tyru/open-browser.vim'
+  \     ]
+  \   }
+let g:quickrun_config = {
+  \   'markdown': {
+  \     'type': 'markdown/gfm',
+  \     'outputter': 'browser'
+  \   }
+  \ }
 
 "" syntastic
 NeoBundle 'scrooloose/syntastic'
