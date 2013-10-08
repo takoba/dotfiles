@@ -54,27 +54,18 @@ NeoBundle 'Shougo/vimfiler.vim' " Powerful file explorer implemented by Vim scri
   \       ]
   \   }
 NeoBundle 'vim-scripts/surround.vim' " Delete/change/add parentheses/quotes/XML-tags/much more with ease
+"" quickrun.vim
 NeoBundle 'thinca/vim-quickrun' " Run commands quickly.
+"let g:quickrun_config = {'*': {'hook/time/enable': 1},}
 NeoBundle 'Shougo/vimshell'
   \ , { 'depends' :
   \     [ 'Shougo/vimproc'
   \     ]
   \   }
 
-" - lightline.vim
-NeoBundle 'itchyny/lightline.vim'
-  \ , { 'depends' :
-  \     [ 'tpope/vim-fugitive'
-  \     , 'airblade/vim-gitgutter'
-  \     ]
-  \   }
-if filereadable(expand('~/.vimrc.lightline'))
-  source ~/.vimrc.lightline
-endif
-
 " - html
 NeoBundle 'othree/html5.vim'
-NeoBundle 'vim-scripts/css_color.vim'
+"NeoBundle 'vim-scripts/css_color.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'mattn/zencoding-vim'
 " - php
@@ -108,6 +99,17 @@ let g:quickrun_config = {
   \   }
   \ }
 
+" - lightline.vim
+NeoBundle 'itchyny/lightline.vim'
+  \ , { 'depends' :
+  \     [ 'tpope/vim-fugitive'
+  \     , 'airblade/vim-gitgutter'
+  \     ]
+  \   }
+if filereadable(expand('~/.vimrc.lightline'))
+  source ~/.vimrc.lightline
+endif
+
 "" syntastic
 NeoBundle 'scrooloose/syntastic'
 let g:syntastic_mode_map = { 'mode': 'passive',
@@ -122,10 +124,6 @@ NeoBundle 'Shougo/neocomplcache'
 if filereadable(expand('~/.vimrc.neocomplcache'))
   source ~/.vimrc.neocomplcache
 endif
-
-"" quickrun.vim
-NeoBundle 'quickrun.vim'
-let g:quickrun_config = {'*': {'hook/time/enable': 1},}
 
 "" gtiv
 "autocmd FileType git :setlocal foldlevel=99
