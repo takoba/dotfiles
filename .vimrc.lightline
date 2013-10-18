@@ -36,7 +36,7 @@ let g:lightline = {
         \   'gitgutter': 'MyGitGutter',
         \ },
         \ 'separator': {'left': '|', 'right': '|'},
-        \ 'subseparator': {'left': '>', 'right': '<'}
+        \ 'subseparator': {'left': '|', 'right': '|'}
         \ }
 
 function! MyModified()

@@ -62,6 +62,7 @@ NeoBundle 'Shougo/vimshell'
   \     [ 'Shougo/vimproc'
   \     ]
   \   }
+nnoremap <silent> ,is <C-u>:VimShellTab<CR>
 
 " - html
 NeoBundle 'othree/html5.vim'
