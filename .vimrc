@@ -40,13 +40,14 @@ NeoBundle 'Shougo/unite.vim'
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
+nnoremap <silent> ,e  :<C-u>Unite file_rec/async:!<CR>
 nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 nnoremap <silent> ,nb :<C-u>Unite neobundle<CR>
-nnoremap <silent> ,ns :<C-u>Unite neobundle/search<CR>
+nnoremap <silent> ,nbs :<C-u>Unite neobundle/search<CR>
 
 NeoBundle 'Shougo/vimfiler.vim' " Powerful file explorer implemented by Vim script
   \ , { 'depends' :
@@ -54,15 +55,20 @@ NeoBundle 'Shougo/vimfiler.vim' " Powerful file explorer implemented by Vim scri
   \       ]
   \   }
 NeoBundle 'vim-scripts/surround.vim' " Delete/change/add parentheses/quotes/XML-tags/much more with ease
-"" quickrun.vim
-NeoBundle 'thinca/vim-quickrun' " Run commands quickly.
-"let g:quickrun_config = {'*': {'hook/time/enable': 1},}
 NeoBundle 'Shougo/vimshell'
   \ , { 'depends' :
   \     [ 'Shougo/vimproc'
   \     ]
   \   }
 nnoremap <silent> ,is <C-u>:VimShellTab<CR>
+NeoBundle 'terryma/vim-multiple-cursors' " True Sublime Text style multiple selections for Vim
+
+" - bufkill.vim
+NeoBundle 'ryakh/bufkill.vim' " Unload/delete/wipe a buffer, keep its window(s), display last accessed buffer(s) 
+NeoBundle 'tyru/vim-altercmd' " Vim plugin: Alter built-in Ex commands by your own ones
+call altercmd#load()
+AlterCommand bd BD
+AlterCommand BD bd
 
 " - html
 NeoBundle 'othree/html5.vim'
@@ -93,6 +99,10 @@ NeoBundle 'superbrothers/vim-quickrun-markdown-gfm'
   \     , 'tyru/open-browser.vim'
   \     ]
   \   }
+
+"" quickrun.vim
+NeoBundle 'thinca/vim-quickrun' " Run commands quickly.
+"let g:quickrun_config = {'*': {'hook/time/enable': 1},}
 let g:quickrun_config = {
   \   'markdown': {
   \     'type': 'markdown/gfm',
