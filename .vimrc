@@ -70,22 +70,41 @@ call altercmd#load()
 AlterCommand bd BD
 AlterCommand BD bd
 
-" - html
+" - vim-instead
+NeoBundle 'excelenter/vim-instead' " Vim stuff that helps you creating text adventures on INSTEAD.
+
+" - vim-indent-guides
+NeoBundle 'tomasr/molokai' " Molokai color scheme for Vim
+colorscheme default
+NeoBundle 'nathanaelkane/vim-indent-guides' " A Vim plugin for visually displaying indent levels in code
+if filereadable(expand('~/.vimrc.indent'))
+  source ~/.vimrc.indent
+endif
+
+" - HTML+CSS
 NeoBundle 'othree/html5.vim'
+NeoBundle 'mattn/zencoding-vim'
 "NeoBundle 'vim-scripts/css_color.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'mattn/zencoding-vim'
-" - php
-NeoBundle 'vim-scripts/phtml.vim'
-" - javascript
+NeoBundle 'groenewege/vim-less' " vim syntax for LESS (dynamic CSS)
+" - Javascript
 NeoBundle 'pangloss/vim-javascript'
-" - ruby
+"NeoBundle 'claco/jasmine.vim' " Jasmine Plugin for Vim
+" - CoffeeScript
+NeoBundle 'kchmck/vim-coffee-script' " CoffeeScript support for vim
+au BufRead,BufNewFile,BufReadPre *.coffee    set filetype=coffee
+autocmd FileType coffee    setlocal sw=2 sts=2 ts=2 et
+"au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw!
+nnoremap <silent> <C-C> :CoffeeCompile vert <CR><C-w>h
+" - PHP
+NeoBundle 'vim-scripts/phtml.vim'
+" - Ruby
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'tpope/vim-rails'
 NeoBundle 'm2ym/rsense'
-" - pig
+" - Pig
 NeoBundle 'pig.vim'
-" - git
+" - Git
 NeoBundle 'gregsexton/gitv'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'airblade/vim-gitgutter'
@@ -141,15 +160,6 @@ endif
 
 filetype plugin indent on  " Required!
 
-" Brief help
-" :NeoBundleList          - list configured bundles
-" :NeoBundleInstall(!)    - install(update) bundles
-" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-
-" Installation check.
-NeoBundleCheck
-
-" ---
 " backspace
 set backspace=indent,eol,start
 
@@ -157,6 +167,7 @@ set encoding=utf-8
 set fileencodings=ucs-bom,utf-8,iso-2022-jp-3,iso-2022-jp,sjis,cp932,eucjp-ms,euc-jisx0213,euc-jp
 set ambiwidth=double
 
+" indent
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -177,3 +188,11 @@ set nu
 if filereadable(expand('~/.vimrc.tab'))
   source ~/.vimrc.tab
 endif
+
+" Brief help
+" :NeoBundleList          - list configured bundles
+" :NeoBundleInstall(!)    - install(update) bundles
+" :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+
+" Installation check.
+NeoBundleCheck

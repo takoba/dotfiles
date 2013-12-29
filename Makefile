@@ -1,4 +1,4 @@
-DOT_FILES = .zshrc .vimrc .vim .vimrc.neocomplcache .vimrc.tab .vimrc.lightline
+DOT_FILES = .zshrc .vimrc .vim .vimrc.neocomplcache .vimrc.tab .vimrc.lightline .vimrc.indent
 
 all: zsh vim 
 
