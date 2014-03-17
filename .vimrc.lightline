@@ -35,8 +35,11 @@ let g:lightline = {
         \   'charcode': 'MyCharCode',
         \   'gitgutter': 'MyGitGutter',
         \ },
-        \ 'separator': {'left': '|', 'right': '|'},
-        \ 'subseparator': {'left': '|', 'right': '|'}
+        \ 'component': {
+        \   'readonly': '%{&readonly?"\u2b64":""}',
+        \ },
+        \ 'separator': {'left': "\u2b80", 'right': "\u2b82"},
+        \ 'subseparator': {'left': "\u2b81", 'right': "\u2b83"}
         \ }
 
 function! MyModified()
