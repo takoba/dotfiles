@@ -196,6 +196,11 @@ NeoBundle 'moznion/hateblo.vim'
   \     ]
   \   }
 
+"" evervim
+NeoBundle 'kakkyz81/evervim'
+let g:evervim_devtoken = 'S=s24:U=29fe61:E=148acb8b1a8:C=141550785ac:P=1cd:A=en-devtoken:V=2:H=77b04070f77d50ecb48188c7ea46907e'
+
+
 filetype plugin indent on  " Required!
 
 " backspace
