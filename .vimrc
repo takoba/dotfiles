@@ -232,6 +232,9 @@ if filereadable(expand('~/.vimrc.tab'))
   source ~/.vimrc.tab
 endif
 
+" - ^[OB
+set timeout timeoutlen=5000 ttimeoutlen=100
+
 " Brief help
 " :NeoBundleList          - list configured bundles
 " :NeoBundleInstall(!)    - install(update) bundles
