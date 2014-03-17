@@ -48,6 +48,7 @@ nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
 nnoremap <silent> ,nb :<C-u>Unite neobundle<CR>
 nnoremap <silent> ,nbs :<C-u>Unite neobundle/search<CR>
+call unite#custom#default_action('file,buffer', 'tabopen')
 
 NeoBundle 'Shougo/vimfiler.vim' " Powerful file explorer implemented by Vim script
   \ , { 'depends' :
