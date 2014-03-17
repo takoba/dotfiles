@@ -189,6 +189,13 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 "" gtiv
 "autocmd FileType git :setlocal foldlevel=99
 
+"" hateblo.vim
+NeoBundle 'moznion/hateblo.vim'
+  \ , { 'depends' :
+  \     ['mattn/webapi-vim'
+  \     ]
+  \   }
+
 filetype plugin indent on  " Required!
 
 " backspace
