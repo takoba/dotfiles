@@ -36,7 +36,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 
 " - unite.vim
-NeoBundle 'Shougo/unite.vim'
+NeoBundleLazy 'Shougo/unite.vim'
+  \ , { 'autoload' :
+  \       { 'commands' : [ 'Unite' ]
+  \       }
+  \   }
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
@@ -50,14 +54,20 @@ nnoremap <silent> ,nb :<C-u>Unite neobundle<CR>
 nnoremap <silent> ,nbs :<C-u>Unite neobundle/search<CR>
 call unite#custom#default_action('file,buffer', 'tabopen')
 
-NeoBundle 'Shougo/vimfiler.vim' " Powerful file explorer implemented by Vim script
-  \ , { 'depends' :
+NeoBundleLazy 'Shougo/vimfiler.vim' " Powerful file explorer implemented by Vim script
+  \ , { 'autoload' :
+  \       { 'commands' : [ 'VimFilerBufferDir' ]
+  \       },
+  \     'depends' :
   \       [ 'Shougo/unite.vim'
   \       ]
   \   }
 NeoBundle 'vim-scripts/surround.vim' " Delete/change/add parentheses/quotes/XML-tags/much more with ease
-NeoBundle 'Shougo/vimshell'
-  \ , { 'depends' :
+NeoBundleLazy 'Shougo/vimshell'
+  \ , { 'autoload' :
+  \       { 'commands' : [ 'VimShellBufferDir' ]
+  \       },
+  \     'depends' :
   \     [ 'Shougo/vimproc'
   \     ]
   \   }
