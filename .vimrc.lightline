@@ -2,9 +2,9 @@ set laststatus=2
 set t_Co=256
 
 " vim-gitgutter
-let g:gitgutter_sign_added = '✚'
-let g:gitgutter_sign_modified = '➜'
-let g:gitgutter_sign_removed = '✘'
+let g:gitgutter_sign_added = "\u271a"
+let g:gitgutter_sign_modified = "\u279c"
+let g:gitgutter_sign_removed = "\u2718"
 
 " lightline.vim
 " lightline.vim
@@ -35,8 +35,8 @@ let g:lightline = {
         \   'charcode': 'MyCharCode',
         \   'gitgutter': 'MyGitGutter',
         \ },
-        \ 'separator': {'left': '|', 'right': '|'},
-        \ 'subseparator': {'left': '|', 'right': '|'}
+        \ 'separator': {'left': "\u2b80", 'right': "\u2b82"},
+        \ 'subseparator': {'left': "\u2b81", 'right': "\u2b83"}
         \ }
 
 function! MyModified()
@@ -44,7 +44,7 @@ function! MyModified()
 endfunction
 
 function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &ro ? 'x' : ''
+  return &ft !~? 'help\|vimfiler\|gundo' && &ro ? "\u2b64" : ''
 endfunction
 
 function! MyFilename()
@@ -60,7 +60,7 @@ function! MyFugitive()
   try
     if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
       let _ = fugitive#head()
-      return strlen(_) ? 'b: '._ : ''
+      return strlen(_) ? "\u2b60 "._ : ''
     endif
   catch
   endtry
