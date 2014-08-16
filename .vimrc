@@ -150,11 +150,23 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 2
 
-"" neocomplcache
-NeoBundle 'Shougo/neocomplcache'
-if filereadable(expand('~/.vimrc.neocomplcache'))
-  source ~/.vimrc.neocomplcache
+"" neocomplete
+NeoBundle has('lua') ? 'Shougo/neocomplete' : 'Shougo/neocomplcache'
+if neobundle#is_installed('neocomplete')
+  let g:neocomplete#enable_at_startup = 1
+  let g:neocomplete#enable_ignore_case = 1
+  let g:neocomplete#enable_smart_case = 1
+  if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+  endif
+  let g:neocomplete#keyword_patterns._ = '\h\w*'
+elseif neobundle#is_installed('neocomplecache')
+  if filereadable(expand('~/.vimrc.neocomplcache'))
+    source ~/.vimrc.neocomplcache
+  endif
 endif
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 "" gtiv
 "autocmd FileType git :setlocal foldlevel=99
