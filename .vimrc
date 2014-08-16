@@ -84,7 +84,7 @@ endif
 
 " - HTML+CSS
 NeoBundle 'othree/html5.vim'
-NeoBundle 'mattn/zencoding-vim'
+NeoBundle 'mattn/emmet-vim'
 "NeoBundle 'vim-scripts/css_color.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'groenewege/vim-less' " vim syntax for LESS (dynamic CSS)
