@@ -39,7 +39,10 @@ NeoBundle 'Shougo/vimproc'
 NeoBundleLazy 'Shougo/unite.vim'
   \ , { 'autoload' :
   \       { 'commands' : [ 'Unite' ]
-  \       }
+  \       },
+  \     'depends' :
+  \       [ 'Shougo/neomru.vim'
+  \       ]
   \   }
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
@@ -54,6 +57,7 @@ nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
 nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+nnoremap <silent> ,ut :<C-u>Unite tab<CR>
 nnoremap <silent> ,nb :<C-u>Unite neobundle<CR>
 nnoremap <silent> ,nbs :<C-u>Unite neobundle/search<CR>
 call unite#custom#default_action('file,buffer', 'tabopen')
