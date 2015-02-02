@@ -2,8 +2,8 @@ update
 upgrade
 
 # tap
-tap homebrew/versions
-tap homebrew/dupes
+tap homebrew/versions || true
+tap homebrew/dupes || true
 
 # - curl
 install openssl
