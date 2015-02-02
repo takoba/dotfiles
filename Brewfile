@@ -38,6 +38,7 @@ install vim
 # util
 install pwgen
 install mobile-shell
+install jq
 
 # homebrew-cask
 tap caskroom/cask
