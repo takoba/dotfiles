@@ -52,6 +52,7 @@ let g:unite_source_grep_default_opts = '--nocolor --nogroup'
 let g:unite_source_grep_recursive_opts = ''
 let g:unite_source_grep_max_candidates = 200
 nnoremap <silent> ,e  :<C-u>Unite file_rec/async:!<CR>
+nnoremap <silent> ,ug :<C-u>Unite file_rec/git<CR>
 nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
 nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
