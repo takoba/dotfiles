@@ -1,1 +1,15 @@
-.vim/bundle
+# myself
+/.gitignore
+
+# extensions
+*.sw[op]
+
+# - Composer
+tests/composer.phar  # deprecated
+/composer.json
+/composer.lock
+/vendor/
+
+# - bundler
+Gemfile
+Gemfile.lock

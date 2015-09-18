@@ -1,11 +1,29 @@
 [user]
 	name = takoba
-	email = plane25@gmail.com
+	email = takuya.obara@gmo-media.jp
+	username = takoba
 [credential]
-	helper = cache
+	helper = osxkeychain
 [core]
 	editor = vim -c \"set fenc=utf-8\"
 	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
 [alias]
-	tree = log --graph --all --date=short --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%ad%Creset  %C(green)%h%Creset %C(magenta reverse)%d%Creset %s\"
+	tree = log --graph --date=short --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%ad%Creset  %C(green)%h%Creset %C(magenta reverse)%d%Creset %s\"
 	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	f = fetch --prune
+	pr = !hub browse -- pull/$(git symbolic-ref --short HEAD)
+	prnew = !hub browse -- compare/$(git symbolic-ref --short HEAD)'?'expand=1'&'body=%23%23%20%E7%9B%AE%E7%9A%84%0A%0A%23%23%20%E5%A4%89%E6%9B%B4%E5%86%85%E5%AE%B9
+	php-check = !git diff master...HEAD --name-only | ag \"\\.php$\" | xargs -I% php /data/App/Prcm.PHP_CodeSniffer/scripts/phpcs --standard=Prcm -n %
+	rb = reset HEAD^
+	ls-merged-pr = !git log --oneline --reverse master..HEAD | grep 'Merge pull request' | awk '{print \"- \" $0}'
+	fixup = commit --amend --reuse-message HEAD
+[merge]
+	tool = vimdiff
+[push]
+	default = simple
+[svn]
+	authorsfile = /Users/usr0200381/.svnauthors

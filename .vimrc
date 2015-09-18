@@ -47,9 +47,11 @@ NeoBundleLazy 'Shougo/unite.vim'
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable =1
 let g:unite_source_file_mru_limit = 200
-let g:unite_source_grep_command = 'ag'
-let g:unite_source_grep_default_opts = '--nocolor --nogroup'
-let g:unite_source_grep_recursive_opts = ''
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+  let g:unite_source_grep_recursive_opts = ''
+endif
 let g:unite_source_grep_max_candidates = 200
 nnoremap <silent> ,f  :<C-u>Unite file_rec/async:!<CR>
 nnoremap <silent> ,ug :<C-u>Unite file_rec/git<CR>
