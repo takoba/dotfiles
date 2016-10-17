@@ -1,10 +1,12 @@
-DOT_FILES = .zshrc .vimrc .vim .vimrc.neocomplcache .vimrc.tab .vimrc.lightline .vimrc.indent
+DOT_FILES = .zshrc .vimrc .vim .vimrc.neocomplcache .vimrc.tab .vimrc.lightline .vimrc.indent .gitconfig .git_commit_template
 
-all: zsh vim 
+all: zsh vim git
 
 zsh: $(foreach f, $(filter .zsh%, $(DOT_FILES)), link-dot-file-$(f))
 
 vim: $(foreach f, $(filter .vim%, $(DOT_FILES)), link-dot-file-$(f))
+
+git: $(foreach f, $(filter .git%, $(DOT_FILES)), link-dot-file-$(f))
   
 .PHONY: clean
 clean: $(foreach f, $(DOT_FILES), unlink-dot-file-$(f))  
