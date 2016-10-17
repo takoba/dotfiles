@@ -1,1 +1,11 @@
+# extensions
+*.sw[op]
+
+# - vim
 .vim/bundle
+
+# - npm
+/node_modules/
+
+# - Composer
+/vendor/
