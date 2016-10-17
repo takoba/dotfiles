@@ -24,3 +24,5 @@
 	tool = vimdiff
 [push]
 	default = simple
+[commit]
+	template = ~/.git_commit_template
