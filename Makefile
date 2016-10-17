@@ -1,4 +1,4 @@
-DOT_FILES = .zshrc .vimrc .vim .vimrc.neocomplcache .vimrc.tab .vimrc.lightline .vimrc.indent .gitconfig .git_commit_template
+DOT_FILES = .zshrc .vimrc .vim .vimrc.neocomplcache .vimrc.tab .vimrc.lightline .vimrc.indent .gitconfig .gitignore .git_commit_template
 
 all: zsh vim git
 
