@@ -6,6 +6,9 @@ export TERM=xterm-256color
 
 export HISTSIZE=5000
 
+# less
+export LESS='-g -i -M -R -S -W -z-4 -x4'
+
 # User specific aliases and functions
 alias ls='ls --color'
 alias ll='ls -al'
