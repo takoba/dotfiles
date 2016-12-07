@@ -11,8 +11,6 @@
 " later.
 " ======================
 
-syntax on
-
 " - NeoBundle
 set nocompatible               " be iMproved
 filetype off                   " required!
@@ -26,6 +24,19 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+" - colorscheme
+NeoBundle 'tomasr/molokai'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'morhetz/gruvbox'
+syntax on
+" -- gruvbox
+set background=dark
+colorscheme gruvbox
+" -- hybrid
+"let g:hybrid_custom_term_colors = 1
+"let g:hybrid_reduced_contrast = 1
+"colorscheme hybrid
 
 "" My Bundles here:
 ""
@@ -94,8 +105,6 @@ AlterCommand BD bd
 NeoBundle 'excelenter/vim-instead' " Vim stuff that helps you creating text adventures on INSTEAD.
 
 " - vim-indent-guides
-NeoBundle 'tomasr/molokai' " Molokai color scheme for Vim
-colorscheme default
 NeoBundle 'nathanaelkane/vim-indent-guides' " A Vim plugin for visually displaying indent levels in code
 if filereadable(expand('~/.vimrc.indent'))
   source ~/.vimrc.indent
@@ -209,10 +218,15 @@ set list
 set listchars=tab:>.
 
 " highlight
+highlight DiffAdd    ctermfg=black ctermbg=2
+highlight DiffChange ctermfg=black ctermbg=3
+highlight DiffDelete ctermfg=black ctermbg=6
+highlight DiffText   ctermfg=black ctermbg=7
 highlight SpecialKey cterm=NONE ctermfg=7 guifg=7
 " highlight(JpSpace)
 highlight JpSpace cterm=underline ctermfg=7 guifg=7
 au BufRead,BufNew * match JpSpace /　/
+
 
 set nu
 
