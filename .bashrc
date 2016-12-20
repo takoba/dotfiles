@@ -23,3 +23,10 @@ if [ "$(uname)" == 'Darwin' ]; then
 else
   source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 fi
+
+# golang
+if [ -d /usr/local/go/bin ]; then
+  export PATH=$PATH:/usr/local/go/bin
+fi
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
