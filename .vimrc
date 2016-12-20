@@ -223,9 +223,9 @@ highlight DiffAdd    ctermfg=black ctermbg=2
 highlight DiffChange ctermfg=black ctermbg=3
 highlight DiffDelete ctermfg=black ctermbg=6
 highlight DiffText   ctermfg=black ctermbg=7
-highlight SpecialKey cterm=NONE ctermfg=7 guifg=7
+highlight SpecialKey cterm=NONE ctermfg=7 guifg=#B3B3B3
 " highlight(JpSpace)
-highlight JpSpace cterm=underline ctermfg=7 guifg=7
+highlight JpSpace cterm=underline ctermfg=7 guifg=#B3B3B3
 au BufRead,BufNew * match JpSpace /　/
 
 

@@ -18,4 +18,8 @@ alias kk="echo -e '\n\n　　　＿人人人＿\n　　　＞　kk　＜\n　　
 alias gst='git status -s -b'
 
 # vimrc
-source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette_osx.sh"
+if [ "$(uname)" == 'Darwin' ]; then
+  source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette_osx.sh"
+else
+  source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+fi
