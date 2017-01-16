@@ -18,7 +18,10 @@ alias kk="echo -e '\n\n　　　＿人人人＿\n　　　＞　kk　＜\n　　
 alias gst='git status -s -b'
 
 # vimrc
-if [ "$(uname)" == 'Darwin' ]; then
+if [ "$SSH_TTY" == "" ]; then
+  # 何もしない(scpなどに影響が出るため）
+  :
+elif [ "$(uname)" == 'Darwin' ]; then
   source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette_osx.sh"
 else
   source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
