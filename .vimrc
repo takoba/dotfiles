@@ -24,20 +24,6 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-" - colorscheme
-NeoBundle 'tomasr/molokai'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'morhetz/gruvbox'
-syntax on
-" -- gruvbox
-set background=dark
-colorscheme gruvbox
-" -- hybrid
-"let g:hybrid_custom_term_colors = 1
-"let g:hybrid_reduced_contrast = 1
-"colorscheme hybrid
-
 "" My Bundles here:
 ""
 "" original repos on github
@@ -219,15 +205,34 @@ set list
 set listchars=tab:>.
 
 " highlight
-highlight DiffAdd    ctermfg=black ctermbg=2
-highlight DiffChange ctermfg=black ctermbg=3
-highlight DiffDelete ctermfg=black ctermbg=6
-highlight DiffText   ctermfg=black ctermbg=7
-highlight SpecialKey cterm=NONE ctermfg=7 guifg=#B3B3B3
+autocmd ColorScheme * highlight DiffAdd    ctermfg=black ctermbg=2
+autocmd ColorScheme * highlight DiffChange ctermfg=black ctermbg=3
+autocmd ColorScheme * highlight DiffDelete ctermfg=black ctermbg=6
+autocmd ColorScheme * highlight DiffText   ctermfg=black ctermbg=7
+autocmd ColorScheme * highlight SpecialKey cterm=NONE ctermfg=7 guifg=#B3B3B3
 " highlight(JpSpace)
-highlight JpSpace cterm=underline ctermfg=7 guifg=#B3B3B3
+autocmd ColorScheme * highlight JpSpace cterm=underline ctermfg=7 guifg=#B3B3B3
 au BufRead,BufNew * match JpSpace /　/
 
+set hlsearch
+
+" - colorscheme
+NeoBundle 'tomasr/molokai'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'morhetz/gruvbox'
+syntax on
+" -- gruvbox
+set background=dark
+colorscheme gruvbox
+" -- hybrid
+"let g:hybrid_custom_term_colors = 1
+"let g:hybrid_reduced_contrast = 1
+"colorscheme hybrid
+
+" open ctag in tab/vertical split
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+map <leader><C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 set nu
 
