@@ -78,9 +78,12 @@ NeoBundleLazy 'Shougo/vimshell'
   \   }
 nnoremap <silent> ,is <C-u>:VimShellTab<CR>
 NeoBundle 'terryma/vim-multiple-cursors' " True Sublime Text style multiple selections for Vim
+
 " - neoyank.vim
-NeoBundle 'Shougo/neoyank.vim'
 nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
+
+" - unite-outline
+NeoBundle 'Shougo/unite-outline'
 
 " - bufkill.vim
 NeoBundle 'ryakh/bufkill.vim' " Unload/delete/wipe a buffer, keep its window(s), display last accessed buffer(s) 
