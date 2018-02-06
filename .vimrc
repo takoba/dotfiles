@@ -38,7 +38,8 @@ NeoBundleLazy 'Shougo/unite.vim'
   \       { 'commands' : [ 'Unite' ]
   \       },
   \     'depends' :
-  \       [ 'Shougo/neomru.vim'
+  \       [ 'Shougo/neomru.vim',
+  \         'Shougo/neoyank.vim'
   \       ]
   \   }
 let g:unite_enable_start_insert=1
