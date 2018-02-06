@@ -3,6 +3,9 @@
 
 # - vim
 .vim/bundle
+# - ctags
+tags
+*.tags
 
 # - npm
 /node_modules/
