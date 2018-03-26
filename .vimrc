@@ -110,6 +110,10 @@ NeoBundle 'groenewege/vim-less' " vim syntax for LESS (dynamic CSS)
 " - Javascript
 NeoBundle 'pangloss/vim-javascript'
 "NeoBundle 'claco/jasmine.vim' " Jasmine Plugin for Vim
+" - Vue.js
+NeoBundle 'posva/vim-vue'
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+autocmd FileType vue syntax sync fromstart
 " - CoffeeScript
 NeoBundle 'kchmck/vim-coffee-script' " CoffeeScript support for vim
 au BufRead,BufNewFile,BufReadPre *.coffee    set filetype=coffee
