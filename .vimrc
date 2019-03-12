@@ -242,7 +242,11 @@ colorscheme gruvbox
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <leader><C-\> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+" - number
 set nu
+
+" - mouse
+set mouse=a
 
 " - tab
 if filereadable(expand('~/.vimrc.tab'))
