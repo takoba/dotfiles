@@ -6,6 +6,10 @@ export TERM=xterm-256color
 
 export HISTSIZE=5000
 
+# byobu
+export BYOBU_PREFIX=/usr/local
+[ -f ~/.byobu/prompt ] && source ~/.byobu/prompt
+
 # less
 export LESS='-g -i -M -R -S -W -z-4 -x4'
 
