@@ -14,7 +14,11 @@ export BYOBU_PREFIX=/usr/local
 export LESS='-g -i -M -R -S -W -z-4 -x4'
 
 # User specific aliases and functions
-alias ls='ls --color'
+if [ $(uname) == 'Darwin' ]; then
+  alias ls='ls -G'
+else
+  alias ls='ls --color'
+fi
 alias ll='ls -al'
 alias kk="echo -e '\n\n　　　＿人人人＿\n　　　＞　kk　＜\n　　　￣Y^Y^Y^￣\n\n　　　　　　　　　　m9(^Д^)'"
 
