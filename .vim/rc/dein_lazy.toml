@@ -1,3 +1,4 @@
+# -- neocomplete.vim
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
 if = 'has("lua")'
