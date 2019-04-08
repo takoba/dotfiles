@@ -25,9 +25,8 @@ endif
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
-  let g:rc_dir = expand('~/.vim/rc')
-  let s:toml = g:rc_dir . '/dein.toml'
-  let s:toml_lazy = g:rc_dir . '/dein_lazy.toml'
+  let s:toml      = s:dein_dir . '/plugins.toml'
+  let s:toml_lazy = s:dein_dir . '/plugins-lazy.toml'
 
   call dein#load_toml(s:toml, { 'lazy': 0 })
   call dein#load_toml(s:toml_lazy, { 'lazy': 1 })
