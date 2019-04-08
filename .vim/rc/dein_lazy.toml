@@ -42,7 +42,7 @@ hook_add = '''
   nnoremap <silent> ,nb :<C-u>Unite neobundle<CR>
   nnoremap <silent> ,nbs :<C-u>Unite neobundle/search<CR>
 '''
-hook_post_source = '''
+hook_source = '''
   call unite#custom#default_action('file,buffer', 'tabopen')
 '''
 
