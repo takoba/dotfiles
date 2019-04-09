@@ -44,6 +44,21 @@ hook_add = '''
 '''
 
 
+# -- bufkill.vim
+[[plugins]]
+repo = 'ryakh/bufkill.vim'
+
+
+# -- vim-altercmd
+[[plugins]]
+repo = 'tyru/vim-altercmd'
+hook_source = '''
+  call altercmd#load()
+  AlterCommand bd BD
+  AlterCommand BD bd
+'''
+
+
 # -- syntastic
 [[plugins]]
 repo = 'scrooloose/syntastic'
