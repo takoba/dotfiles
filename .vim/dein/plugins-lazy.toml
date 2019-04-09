@@ -105,10 +105,6 @@ repo = 'tpope/vim-rails'
 on_ft = [ 'ruby' ]
 
 [[plugins]]
-repo = 'm2ym/rsense'
-on_ft = [ 'ruby' ]
-
-[[plugins]]
 repo = 'plasticboy/vim-markdown'
 on_ft = [ 'markdown' ]
 
