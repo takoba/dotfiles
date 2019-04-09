@@ -26,13 +26,15 @@ alias kk="echo -e '\n\n　　　＿人人人＿\n　　　＞　kk　＜\n　　
 alias gst='git status -s -b'
 
 # vimrc
+DEIN_DIR="$HOME/.vim/dein"
+GRUVBOX_DIR="$DEIN_DIR/repos/github.com/morhetz/gruvbox"
 if [ "$SSH_TTY" == "" ]; then
   # 何もしない(scpなどに影響が出るため）
   :
 elif [ "$(uname)" == 'Darwin' ]; then
-  source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette_osx.sh"
+  [ -d $GRUVBOX_DIR ] && source "$GRUVBOX_DIR/gruvbox_256palette_osx.sh"
 else
-  source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+  [ -d $GRUVBOX_DIR ] && source "$GRUVBOX_DIR/gruvbox_256palette.sh"
 fi
 
 # golang
