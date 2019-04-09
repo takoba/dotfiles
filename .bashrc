@@ -25,6 +25,11 @@ alias kk="echo -e '\n\n　　　＿人人人＿\n　　　＞　kk　＜\n　　
 # git
 alias gst='git status -s -b'
 
+# hub
+if type "hub" > /dev/null 2>&1; then
+  alias git=hub
+fi
+
 # vimrc
 DEIN_DIR="$HOME/.vim/dein"
 GRUVBOX_DIR="$DEIN_DIR/repos/github.com/morhetz/gruvbox"
