@@ -71,9 +71,3 @@ hook_add = '''
   let g:syntastic_auto_loc_list = 2
 '''
 
-
-# -- toml
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft= [ 'toml' ]
-

@@ -59,3 +59,60 @@ hook_add = '''
 '''
 
 
+# -- syntax
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = [ 'html', 'php', 'javascript', 'vue' ]
+
+[[plugins]]
+repo = 'othree/html5.vim'
+on_ft = [ 'html' ]
+
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+on_ft = [ 'css', 'scss' ]
+
+[[plugins]]
+repo = 'cakebaker/scss-syntax.vim'
+on_ft = [ 'scss' ]
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = [ 'javascript' ]
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = [ 'javascript', 'vue' ]
+hook_add = '''
+  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css.scss
+  autocmd FileType vue syntax sync fromstart
+'''
+
+[[plugins]]
+repo = 'StanAngeloff/php.vim'
+on_ft = [ 'php' ]
+
+[[plugins]]
+repo = 'vim-scripts/phtml.vim'
+on_ft = [ 'php' ]
+
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = [ 'ruby' ]
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = [ 'ruby' ]
+
+[[plugins]]
+repo = 'm2ym/rsense'
+on_ft = [ 'ruby' ]
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = [ 'markdown' ]
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = [ 'toml' ]
+
