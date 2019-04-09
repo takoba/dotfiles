@@ -1,35 +1,25 @@
-## 管理しようと思ってるファイル
+# takoba/dotfiles
 
-* ~/.vimrc
-* ~/.bashrc
-  * これは環境に依存する記述とかありそうだから、~/.bashrcにincludeするタイプとかにする
+## Usage
 
-  ```:~/.bashrc
-    if [ -f ~/dotfiles/.bashrc ]; then
-      . ~/dotfiles/.bashrc
-    fi
-  ```
+```bash
+cd ~
+git clone https://github.com/takoba/dotfiles.git
 
-* ~/.zshrc
-
-## NeoBundleのつかいかた
-git cloneしただけだと使えなかったりする。
-
-```
-cd ~/dotfiles
+cd dptfiles
 git submodule init
 git submodule update
+
+make
 ```
 
-ってかんじでsubmoduleを追加してあげる。
+### bashrc
 
-## つかってるplug-inについて
-必要に応じてやるべきことを書いときます。
+Add the following lines to your `~/.bashrc` :
 
-### vim-proc
-:NeoBundleInstall をしたら、次の操作もしておく
-
+```bash
+if [ -f ~/dotfiles/.bashrc ]; then
+  . ~/dotfiles/.bashrc
+fi
 ```
-$ cd ~/dotfiles/.vim/bundle/vimproc
-$ make -f make_***.mak  // 環境に合わせたmakファイルを利用する（ちゃんと用意されてるはず）
-```
+

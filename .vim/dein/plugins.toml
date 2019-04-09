@@ -1,0 +1,73 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+
+# -- colorscheme
+[[plugins]]
+repo = 'morhetz/gruvbox'
+
+
+# -- lightline.vim
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+depends = [
+  'tpope/vim-fugitive',
+  'airblade/vim-gitgutter',
+]
+hook_add = '''
+  if filereadable(expand('~/.vimrc.lightline'))
+    source ~/.vimrc.lightline
+  endif
+'''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+
+# -- vim-indent-guides
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add = '''
+  if filereadable(expand('~/.vimrc.indent'))
+    source ~/.vimrc.indent
+  endif
+'''
+
+
+# -- bufkill.vim
+[[plugins]]
+repo = 'ryakh/bufkill.vim'
+
+
+# -- vim-altercmd
+[[plugins]]
+repo = 'tyru/vim-altercmd'
+hook_source = '''
+  call altercmd#load()
+  AlterCommand bd BD
+  AlterCommand BD bd
+'''
+
+
+# -- syntastic
+[[plugins]]
+repo = 'scrooloose/syntastic'
+hook_add = '''
+  let g:syntastic_mode_map = { 'mode': 'passive',
+    \ 'active_filetypes': ['ruby', 'php', 'javascript'], 
+    \ 'passive_filetypes': ['html', 'phtml'] }
+  let g:syntastic_javascript_checkers = ['jshint']
+  let g:syntastic_enable_signs = 1
+  let g:syntastic_auto_loc_list = 2
+'''
+

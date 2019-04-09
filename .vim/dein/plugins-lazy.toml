@@ -1,0 +1,118 @@
+# -- neocomplete.vim
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+if = 'has("lua")'
+on_i = 1
+hook_add = '''
+  let g:neocomplete#enable_at_startup = 1
+  let g:neocomplete#enable_ignore_case = 1
+  let g:neocomplete#enable_smart_case = 1
+  if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+  endif
+  let g:neocomplete#keyword_patterns._ = '\h\w*'
+  inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+'''
+
+
+# -- unite.vim
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+depends = [
+ 'neomru.vim',
+]
+hook_add = '''
+  let g:unite_enable_start_insert=1
+  let g:unite_source_file_mru_limit = 200
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nocolor --nogroup'
+  let g:unite_source_grep_recursive_opts = ''
+  let g:unite_source_grep_max_candidates = 200
+  nnoremap <silent> ,f  :<C-u>Unite file_rec/async:!<CR>
+  nnoremap <silent> ,ug :<C-u>Unite file_rec/git<CR>
+  nnoremap <silent> ,ub :<C-u>Unite buffer<CR>
+  nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file file/new<CR>
+  nnoremap <silent> ,ur :<C-u>Unite -buffer-name=register register<CR>
+  nnoremap <silent> ,uu :<C-u>Unite file_mru buffer<CR>
+  nnoremap <silent> ,ut :<C-u>Unite tab<CR>
+  nnoremap <silent> ,nb :<C-u>Unite neobundle<CR>
+  nnoremap <silent> ,nbs :<C-u>Unite neobundle/search<CR>
+'''
+hook_source = '''
+  call unite#custom#default_action('file,buffer', 'tabopen')
+'''
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+on_path = '.*'
+on_i = 1
+depends = [
+  'unite.vim',
+]
+hook_add = '''
+  nnoremap <silent> ,uy :<C-u>Unite history/yank<CR>
+'''
+
+
+# -- syntax
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = [ 'html', 'php', 'javascript', 'vue' ]
+
+[[plugins]]
+repo = 'othree/html5.vim'
+on_ft = [ 'html' ]
+
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+on_ft = [ 'css', 'scss' ]
+
+[[plugins]]
+repo = 'cakebaker/scss-syntax.vim'
+on_ft = [ 'scss' ]
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = [ 'javascript' ]
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = [ 'javascript', 'vue' ]
+hook_add = '''
+  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css.scss
+  autocmd FileType vue syntax sync fromstart
+'''
+
+[[plugins]]
+repo = 'StanAngeloff/php.vim'
+on_ft = [ 'php' ]
+
+[[plugins]]
+repo = 'vim-scripts/phtml.vim'
+on_ft = [ 'php' ]
+
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = [ 'ruby' ]
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = [ 'ruby' ]
+
+[[plugins]]
+repo = 'm2ym/rsense'
+on_ft = [ 'ruby' ]
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = [ 'markdown' ]
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = [ 'toml' ]
+
