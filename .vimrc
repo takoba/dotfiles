@@ -43,9 +43,6 @@ if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
 
-filetype plugin indent on
-syntax enable
-
 " backspace
 set backspace=indent,eol,start
 
@@ -93,3 +90,7 @@ set mouse=
 if filereadable(expand('~/.vimrc.tab'))
   source ~/.vimrc.tab
 endif
+
+
+filetype plugin indent on
+syntax enable
