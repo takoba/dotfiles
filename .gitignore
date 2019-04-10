@@ -1,5 +1,6 @@
-# -- extensions
+# -- tmp files
 *.sw[op]
+.netrwhist
 
 # -- vim
 .vim/dein/repos/*
