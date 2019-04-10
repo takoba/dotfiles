@@ -7,7 +7,9 @@ export TERM=xterm-256color
 export HISTSIZE=5000
 
 # byobu
-export BYOBU_PREFIX=/usr/local
+if [ "$(uname)" == 'Darwin' ]; then
+  export BYOBU_PREFIX=/usr/local
+fi
 [ -f ~/.byobu/prompt ] && source ~/.byobu/prompt
 
 # less
