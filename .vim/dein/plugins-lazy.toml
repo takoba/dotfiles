@@ -84,7 +84,7 @@ on_ft = [ 'javascript' ]
 repo = 'posva/vim-vue'
 on_ft = [ 'javascript', 'vue' ]
 hook_add = '''
-  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css.scss
+  autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.javascript.css.scss
   autocmd FileType vue syntax sync fromstart
 '''
 
