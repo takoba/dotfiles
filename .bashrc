@@ -35,6 +35,11 @@ if [ -d /usr/local/share/git-core/contrib/diff-highlight ]; then
   export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 fi
 
+# ghq
+if type "ghq" > /dev/null 2>&1 && type "peco" > /dev/null 2>&1; then
+  alias ghql='ghq look `ghq list | peco`'
+fi
+
 # vimrc
 DEIN_DIR="$HOME/.vim/dein"
 GRUVBOX_DIR="$DEIN_DIR/repos/github.com/morhetz/gruvbox"
