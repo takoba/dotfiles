@@ -29,7 +29,10 @@ alias gst='git status -s -b'
 
 # hub
 if type "hub" > /dev/null 2>&1; then
-  alias git=hub
+  eval "$(hub alias -s)"
+fi
+if [ -d /usr/local/share/git-core/contrib/diff-highlight ]; then
+  export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 fi
 
 # vimrc
