@@ -12,6 +12,11 @@
 tags
 *.tags
 
+# -- anyenv
+.node-version
+.php-version
+.ruby-version
+
 # -- npm
 /node_modules/
 
