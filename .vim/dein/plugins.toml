@@ -8,6 +8,9 @@ build = 'make'
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
 
 # -- colorscheme
 [[plugins]]
