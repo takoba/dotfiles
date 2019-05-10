@@ -24,6 +24,11 @@ fi
 alias ll='ls -al'
 alias kk="echo -e '\n\n　　　＿人人人＿\n　　　＞　kk　＜\n　　　￣Y^Y^Y^￣\n\n　　　　　　　　　　m9(^Д^)'"
 
+# diff
+if type "colordiff" > /dev/null 2>&1; then
+  alias diff="colordiff"
+fi
+
 # git
 alias gst='git status -s -b'
 
