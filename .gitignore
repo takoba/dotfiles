@@ -12,6 +12,9 @@
 tags
 *.tags
 
+# -- direnv
+.envrc
+
 # -- anyenv
 .node-version
 .php-version
