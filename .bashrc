@@ -11,6 +11,12 @@ if [ -e $HOME/bin ]; then
   export PATH=$HOME/bin:$PATH
 fi
 
+# direnv
+export EDITOR='vim'
+if type "direnv" > /dev/null 2>&1; then
+  eval "$(direnv hook bash)"
+fi
+
 # byobu
 if [ "$(uname)" == 'Darwin' ]; then
   export BYOBU_PREFIX=/usr/local
