@@ -107,8 +107,21 @@ on_ft = [ 'ruby' ]
 [[plugins]]
 repo = 'plasticboy/vim-markdown'
 on_ft = [ 'markdown' ]
+hook_add = '''
+  au BufRead,BufNewFile *.md set filetype=markdown
+'''
 
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = [ 'toml' ]
 
+
+# -- preview
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'previm/previm'
+hook_add = '''
+  let g:previm_open_cmd = 'open -a "Google Chrome"'
+'''
