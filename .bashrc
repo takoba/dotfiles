@@ -6,6 +6,11 @@ export TERM=xterm-256color
 
 export HISTSIZE=5000
 
+# bin
+if [ -e $HOME/bin ]; then
+  export PATH=$HOME/bin:$PATH
+fi
+
 # byobu
 if [ "$(uname)" == 'Darwin' ]; then
   export BYOBU_PREFIX=/usr/local
