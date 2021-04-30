@@ -53,7 +53,7 @@ fi
 
 # ghq
 if type "ghq" > /dev/null 2>&1 && type "peco" > /dev/null 2>&1; then
-  alias ghql='ghq look `ghq list | peco`'
+  alias ghql='ghq get -look `ghq list | peco`'
 fi
 
 # vimrc
