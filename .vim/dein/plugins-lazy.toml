@@ -79,6 +79,9 @@ on_ft = [ 'scss' ]
 [[plugins]]
 repo = 'pangloss/vim-javascript'
 on_ft = [ 'javascript' ]
+hook_add = '''
+  let g:javascript_plugin_flow = 1
+'''
 
 [[plugins]]
 repo = 'posva/vim-vue'
@@ -93,12 +96,24 @@ repo = 'StanAngeloff/php.vim'
 on_ft = [ 'php' ]
 
 [[plugins]]
+repo = 'vim-vdebug/vdebug'
+hook_add = '''
+  let g:vdebug_options = {
+  \    "on_close" : 'detach',
+  \    "ide_key" : 'PHPSTORM',
+  \}
+'''
+
+[[plugins]]
 repo = 'vim-scripts/phtml.vim'
 on_ft = [ 'php' ]
 
 [[plugins]]
 repo = 'vim-ruby/vim-ruby'
 on_ft = [ 'ruby' ]
+hook_add = '''
+  au BufRead,BufNewFile Schemafile set filetype=ruby
+'''
 
 [[plugins]]
 repo = 'tpope/vim-rails'
@@ -109,12 +124,30 @@ repo = 'plasticboy/vim-markdown'
 on_ft = [ 'markdown' ]
 hook_add = '''
   au BufRead,BufNewFile *.md set filetype=markdown
+  let g:vim_markdown_folding_disabled = 1
+  let g:vim_markdown_auto_insert_bullets = 1
+  let g:vim_markdown_new_list_item_indent = 1
 '''
 
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = [ 'toml' ]
 
+[[plugins]]
+repo = 'direnv/direnv.vim'
+#if = 'exists("$EXTRA_VIM")'
+on_ft = [ 'direnv' ]
+hook_add='''
+  au BufRead,BufNewFile .envrc set filetype=direnv
+'''
+
+[[plugins]]
+repo = 'hashivim/vim-terraform'
+on_ft = [ 'terraform' ]
+
+[[plugins]]
+repo = 'juliosueiras/vim-terraform-completion'
+on_ft = [ 'terraform' ]
 
 # -- preview
 [[plugins]]
@@ -124,4 +157,5 @@ repo = 'tyru/open-browser.vim'
 repo = 'previm/previm'
 hook_add = '''
   let g:previm_open_cmd = 'open -a "Google Chrome"'
+  nnoremap <silent> ,pv :<C-u>PrevimOpen<CR>
 '''

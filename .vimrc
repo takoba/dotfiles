@@ -91,6 +91,13 @@ if filereadable(expand('~/.vimrc.tab'))
   source ~/.vimrc.tab
 endif
 
+" - direnv.vim
+if exists("$EXTRA_VIM")
+  for path in split($EXTRA_VIM, ':')
+    exec "source ".path
+  endfor
+endif
+
 
 filetype plugin indent on
 syntax enable

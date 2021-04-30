@@ -32,3 +32,6 @@ setopt COMPLETE_IN_WORD
 
 # autoload -U colors
 #colors
+
+# added by travis gem
+[ -f /Users/takoba/.travis/travis.sh ] && source /Users/takoba/.travis/travis.sh
