@@ -56,6 +56,11 @@ if type "ghq" > /dev/null 2>&1 && type "peco" > /dev/null 2>&1; then
   alias ghql='ghq get -look `ghq list | peco`'
 fi
 
+# ghq
+if type "gh" > /dev/null 2>&1 && type "peco" > /dev/null 2>&1; then
+  alias ghprl="gh pr checkout \$(gh pr list | peco | awk '{ print \$1 }')"
+fi
+
 # vimrc
 DEIN_DIR="$HOME/.vim/dein"
 GRUVBOX_DIR="$DEIN_DIR/repos/github.com/morhetz/gruvbox"
