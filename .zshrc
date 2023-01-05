@@ -68,7 +68,7 @@ if type "ghq" > /dev/null 2>&1 && type "peco" > /dev/null 2>&1; then
   alias ghql="cd -- \$(ghq list --full-path --exact | peco)"
 fi
 
-# ghq
+# gh
 if type "gh" > /dev/null 2>&1 && type "peco" > /dev/null 2>&1; then
   alias ghprl="gh pr checkout \$(gh pr list | peco | awk '{ print \$1 }')"
 fi
