@@ -3,7 +3,7 @@
 	email = plane25@gmail.com
 	username = takoba
 [credential]
-	helper = cache
+	helper = osxkeychain
 [core]
 	editor = vim -c \"set fenc=utf-8\"
 	excludesfile = ~/.gitignore
