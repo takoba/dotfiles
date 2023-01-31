@@ -10,6 +10,10 @@ export TERM=xterm-256color
 
 export HISTSIZE=100000
 
+zstyle ":completion:*:commands" rehash 1
+
+fpath=($HOME/.zsh/functions $fpath)
+
 # keybinds
 bindkey -e
 autoload -U select-word-style
@@ -17,7 +21,8 @@ select-word-style bash
 
 # zsh-completions
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+  fpath=($(brew --prefix)/share/zsh-completions $fpath)
+  fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
 
   autoload -Uz compinit
   compinit
