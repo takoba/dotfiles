@@ -23,10 +23,9 @@ select-word-style bash
 if type brew &>/dev/null; then
   fpath=($(brew --prefix)/share/zsh-completions $fpath)
   fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
-
-  autoload -Uz compinit
-  compinit
 fi
+autoload -Uz compinit
+compinit
 
 # bin
 if [ -e $HOME/bin ]; then
