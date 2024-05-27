@@ -19,6 +19,11 @@ bindkey -e
 autoload -U select-word-style
 select-word-style bash
 
+# homebrew
+if type brew &>/dev/null; then
+  export HOMEBREW_CASK_OPTS="--appdir=/Applications --fontdir=/Library/Fonts"
+fi
+
 # zsh-completions
 if type brew &>/dev/null; then
   fpath=($(brew --prefix)/share/zsh-completions $fpath)
