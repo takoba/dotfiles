@@ -5,6 +5,10 @@ function raise () {
     return 1
 }
 
+function is_macOS () {
+    return $(test "$(uname)" = "Darwin")
+}
+
 readonly VIM_TARGETS=($(cat <<EOL
 .vimrc
 .vim
@@ -28,34 +32,44 @@ EOL
 readonly CURDIR=$(cd $(dirname $0); pwd)
 
 function link () {
-    SRC=$CURDIR/$1
-    DST=$HOME/$1
-	echo "Create Symlink: $SRC => $DST"
-	ln -snf $SRC $DST
+    src=$CURDIR/$1
+    dst=$HOME/$1
+	echo "Create Symlink: $src => $dst"
+	ln -snf $src $dst
 }
 function remove () {
-    TARGET=$HOME/$1
-    echo "Remove file: $TARGET"
-	if [ -f $TARGET ]; then
-        rm $TARGET
+    target=$HOME/$1
+    echo "Remove file: $target"
+	if [ -f $target ]; then
+        rm $target
     else
-        echo "INFO: remove was not worked. (because $TARGET is not exist)"
+        echo "INFO: remove was not worked. (because $target is not exist)"
     fi
 }
 function unlink () {
-    TARGET=$HOME/$1
-    echo "Unlink Symlink: $TARGET"
-	if [ -L $TARGET ]; then
-        rm $TARGET
+    target=$HOME/$1
+    echo "Unlink Symlink: $target"
+	if [ -L $target ]; then
+        rm $target
     else
-        echo "INFO: unlink was not worked. (because $TARGET is not exist)"
+        echo "INFO: unlink was not worked. (because $target is not exist)"
     fi
 }
 function zshrc () {
-    SRC=$CURDIR/.zshrc
-    DST=$HOME/.zshrc
-	echo "Create file: $DST"
-    echo "[ -f $SRC ] && . $SRC" > $DST
+    dst=$HOME/.zshrc
+	echo "Create file: $dst"
+
+    body=""
+
+    commonrcsrc=$CURDIR/.zshrc
+    body+="[ -f $commonrcsrc ] && . $commonrcsrc\n"
+
+    if is_macOS; then
+        macosrcsrc=$CURDIR/.zshrc.macos
+        body+="[ -f $macosrcsrc ] && . $macosrcsrc\n"
+    fi
+
+    echo ${body%%\\n} > $dst
 }
 
 function subcommand__init () {
