@@ -29,3 +29,5 @@
 	template = ~/.git_commit_template
 [pager]
 	branch = cat
+[init]
+	defaultBranch = main
