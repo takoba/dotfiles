@@ -1,25 +1,18 @@
 # takoba/dotfiles
 
+## premises
+
+- Setup zsh, vim, git, and direnv
+- In main, uses macOS.
+    - But i hope that the repo might be supporting POSIX shell
+
 ## Usage
 
-```bash
-cd ~
-git clone https://github.com/takoba/dotfiles.git
+```sh
+git clone https://github.com/takoba/dotfiles.git ~/dotfiles
+cd ~/dotfiles
 
-cd dptfiles
 git submodule init
 git submodule update
-
 make
 ```
-
-### bashrc
-
-Add the following lines to your `~/.bashrc` :
-
-```bash
-if [ -f ~/dotfiles/.bashrc ]; then
-  . ~/dotfiles/.bashrc
-fi
-```
-
