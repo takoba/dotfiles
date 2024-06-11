@@ -1,5 +1,10 @@
 #!/bin/sh
 
+function raise () {
+    echo $1 1>&2
+    return 1
+}
+
 readonly VIM_TARGETS=($(cat <<EOL
 .vimrc
 .vim
@@ -53,7 +58,7 @@ function zshrc () {
     echo "[ -f $SRC ] && . $SRC" > $DST
 }
 
-function init () {
+function subcommand__init () {
     targets=(${VIM_TARGETS[@]} ${GIT_TARGETS[@]} ${DIRENV_TARGETS[@]})
     for target in ${targets[@]}; do
         link $target
@@ -61,7 +66,7 @@ function init () {
 
     zshrc
 }
-function cleanup () {
+function subcommand__cleanup () {
     targets=(${VIM_TARGETS[@]} ${GIT_TARGETS[@]} ${DIRENV_TARGETS[@]})
     for target in ${targets[@]}; do
         unlink $target
@@ -71,20 +76,16 @@ function cleanup () {
 }
 
 subcommand="$1"
+dispatchto="subcommand__$subcommand"
+shift
+if type $dispatchto >/dev/null 2>&1; then
+    $dispatchto "$@"
+else
+    if [ -z $subcommand ]; then
+        raise "ERROR: missing subcommand. Usage: ./setup.sh [subcommand]"
+    else
+        raise "ERROR: Unknown subcommand: \"$subcommand\""
+    fi
 
-case $subcommand in
-    init)
-        init
-        ;;
-    cleanup)
-        cleanup
-        ;;
-    *)
-        if [ -z $subcommand ]; then
-            echo "ERROR: missing subcommand. Usage: ./setup.sh [subcommand]"
-        else
-            echo "ERROR: Unknown subcommand: '$subcommand'"
-        fi
-        exit 1
-        ;;
-esac
+    exit $?
+fi
