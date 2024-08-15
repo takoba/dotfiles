@@ -15,4 +15,7 @@ cd ~/dotfiles
 git submodule init
 git submodule update
 make
+
+# cleanup
+make clean
 ```
