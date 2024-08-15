@@ -44,20 +44,13 @@ if type "direnv" > /dev/null 2>&1; then
 fi
 
 # byobu
-if [ "$(uname)" = 'Darwin' ]; then
-  export BYOBU_PREFIX=/opt/homebrew
-fi
 [ -f ~/.byobu/prompt ] && source ~/.byobu/prompt
 
 # less
 export LESS='-g -i -M -R -S -W -z-4 -x4'
 
 # User specific aliases and functions
-if [ $(uname) = 'Darwin' ]; then
-  alias ls='ls -G'
-else
-  alias ls='ls --color'
-fi
+alias ls='ls -G'
 alias ll='ls -al'
 alias kk="echo -e '\n\n　　　＿人人人＿\n　　　＞　kk　＜\n　　　￣Y^Y^Y^￣\n\n　　　　　　　　　　m9(^Д^)'"
 
@@ -86,9 +79,6 @@ fi
 if type "gh" > /dev/null 2>&1 && type "peco" > /dev/null 2>&1; then
   alias ghprl="gh pr checkout \$(gh pr list | peco | awk '{ print \$1 }')"
 fi
-
-# anyenv
-eval "$(anyenv init -)"
 
 # vimrc
 DEIN_DIR="$HOME/.vim/dein"
