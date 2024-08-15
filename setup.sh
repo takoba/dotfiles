@@ -61,9 +61,11 @@ function zshrc () {
 
     body=""
 
+    # in first, load a common rc file
     commonrcsrc=$CURDIR/.zshrc
     body+="[ -f $commonrcsrc ] && . $commonrcsrc\n"
 
+    # in last, load some optional rc file what according to the env
     if is_macOS; then
         macosrcsrc=$CURDIR/.zshrc.macos
         body+="[ -f $macosrcsrc ] && . $macosrcsrc\n"
