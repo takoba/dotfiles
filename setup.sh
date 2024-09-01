@@ -67,7 +67,7 @@ function zshrc () {
 
     # in last, load some optional rc file what according to the env
     if is_macOS; then
-        macosrcsrc=$CURDIR/.zshrc.macos
+        macosrcsrc=$CURDIR/.macos.zshrc
         body+="[ -f $macosrcsrc ] && . $macosrcsrc\n"
     fi
 
