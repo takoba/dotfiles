@@ -81,6 +81,12 @@ if type "gh" > /dev/null 2>&1 && type "peco" > /dev/null 2>&1; then
   alias ghprl="gh pr checkout \$(gh pr list | peco | awk '{ print \$1 }')"
 fi
 
+# atuin
+if type "atuin" > /dev/null 2>&1; then
+  eval "$(atuin init zsh --disable-up-arrow)"
+  eval "$(atuin gen-completions --shell zsh)"
+fi
+
 # vimrc
 DEIN_DIR="$HOME/.vim/dein"
 GRUVBOX_DIR="$DEIN_DIR/repos/github.com/morhetz/gruvbox"
