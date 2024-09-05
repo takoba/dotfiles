@@ -23,9 +23,16 @@
     },
     "editor.suggest.insertMode": "replace"
   },
+  "[shellscript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.shellcheck": "explicit"
+    },
+    "files.eol": "\n"
+  },
+
   "cSpell.words": [
     "direnv",
     "dotfiles",
     "POSIX"
-  ]
+  ],
 }
