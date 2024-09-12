@@ -5,6 +5,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 ## gnu-grep
 PATH="/opt/homebrew/opt/grep/libexec/gnubin:$PATH"
+## curl
+PATH="/opt/homebrew/opt/curl/bin:$PATH"
 
 # anyenv
 eval "$(anyenv init -)"
