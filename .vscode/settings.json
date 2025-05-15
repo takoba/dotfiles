@@ -74,11 +74,17 @@
     "byobu",
     "direnv",
     "dotfiles",
+    "expandtab",
     "gnubin",
+    "inoremap",
     "libexec",
+    "nnoremap",
     "POSIX",
     "pyenv",
+    "setlocal",
     "shellenv",
+    "shiftwidth",
+    "softtabstop",
     "virtualenv"
   ],
 }

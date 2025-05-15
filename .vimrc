@@ -52,9 +52,11 @@ set ambiwidth=double
 
 " indent
 set expandtab
+set smarttab
+set smartindent
 set tabstop=2
-set shiftwidth=2
-set softtabstop=0
+set shiftwidth=0
+set softtabstop=-1
 
 " listchars
 set list
