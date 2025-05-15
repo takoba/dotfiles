@@ -18,5 +18,8 @@ export PYENV_VIRTUALENV_VERBOSE_ACTIVATE=1
 export BYOBU_PREFIX=/opt/homebrew
 [ -f ~/.byobu/prompt ] && source ~/.byobu/prompt
 
+# vscode
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
 # aliases
 alias ls='ls --color'
