@@ -1,4 +1,5 @@
 {
+  // --- markdown
   "[markdown]": {
     "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
     "editor.codeActionsOnSave": {
@@ -6,11 +7,45 @@
     },
     "editor.wordWrap": "on",
     "editor.quickSuggestions": {
-      "other": "on",
       "comments": "off",
-      "strings": "off"
-    }
+      "strings": "off",
+      "other": "on"
+    },
+    "cSpell.fixSpellingWithRenameProvider": true,
+    "cSpell.advanced.feature.useReferenceProviderWithRename": true,
+    "cSpell.advanced.feature.useReferenceProviderRemove": "/^#+\\s/"
   },
+  "markdownlint.config": {
+    // MD007/ul-indent - Unordered list indentation
+    // - cf. https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.jsonc#L37
+    "MD007": {
+      "indent": 4
+    },
+    // MD025/single-title/single-h1 - Multiple top-level headings in the same document
+    // - cf. https://github.com/DavidAnson/markdownlint/blob/v0.38.0/doc/md025.md
+    // - Markdown記法を採用しているドキュメントツールとの互換性を持たせるため
+    //   - 多くのドキュメントツールではタイトルが別になっているケースが多い
+    //   - 上記の仕様を持つ場合、multiple h1が許容されているケースがほぼ全てだと思われる
+    // - でも、sectionとなるheadingはh2以下で書きましょう、と言及されているケースが多いので、なくてもよいかも
+    //   - cf. https://zenn.dev/teftef_ty/articles/config-markdownlint
+    "MD025": false,
+    // MD028/no-blanks-around-fences - Blank lines around fences
+    // - cf. https://github.com/DavidAnson/markdownlint/blob/v0.38.0/doc/md028.md
+    "MD028": false,
+    // MD033/no-inline-html - Inline HTML
+    // - cf. https://github.com/DavidAnson/markdownlint/blob/v0.38.0/doc/md033.md
+    // - GitHubとかでもあまり使えないので、外す
+    "MD033": false,
+    // MD034/no-bare-urls - Bare URLs should not be used
+    // - cf. https://github.com/DavidAnson/markdownlint/blob/v0.38.0/doc/md034.md
+    // - そのままでもいいけど、滅多に害があるケースに遭遇しないので外す
+    "MD034": false
+  },
+  "markdown.extension.list.indentationSize": "inherit",
+  "markdown.extension.toc.levels": "2..6",
+  // --- /markdown
+
+  // --- json
   "[json][jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features",
     "editor.codeActionsOnSave": {
@@ -23,16 +58,27 @@
     },
     "editor.suggest.insertMode": "replace"
   },
+  // --- /json
+
+  // --- shellscript
   "[shellscript]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.shellcheck": "explicit"
     },
     "files.eol": "\n"
   },
+  // --- /shellscript
 
   "cSpell.words": [
+    "anyenv",
+    "byobu",
     "direnv",
     "dotfiles",
-    "POSIX"
+    "gnubin",
+    "libexec",
+    "POSIX",
+    "pyenv",
+    "shellenv",
+    "virtualenv"
   ],
 }
