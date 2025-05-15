@@ -11,6 +11,9 @@ PATH="/opt/homebrew/opt/curl/bin:$PATH"
 # anyenv
 eval "$(anyenv init -)"
 
+# pyenv
+export PYENV_VIRTUALENV_VERBOSE_ACTIVATE=1
+
 # byobu
 export BYOBU_PREFIX=/opt/homebrew
 [ -f ~/.byobu/prompt ] && source ~/.byobu/prompt
